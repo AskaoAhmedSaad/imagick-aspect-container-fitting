@@ -15,6 +15,7 @@ $container_height = $argv[4];
 // check if the given container_width or container_height is negative or equals zero then nothing to do
 if ($container_width < 0 || $container_height < 0 || $container_width == 0 || $container_height == 0 || 
 		!is_numeric($container_width) || !is_numeric($container_height)){
+	echo 'the given container_width or container_height is not valid';
 	return;
 }
 
