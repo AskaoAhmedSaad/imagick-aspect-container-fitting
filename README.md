@@ -47,7 +47,13 @@ else
 ```
 <br>
 
-### we can use Test_ImageRatioResizing.php to test our logic in command line as this:
+#### we can use Test_ImageRatioResizing.php to test our logic in command line as this and pass ($image_width, $image_height, $container_width, $container_height):
+```
+$image_width = $argv[1];
+$image_height= $argv[2];
+$container_width = $argv[3];
+$container_height = $argv[4];
+```
 ```
 php Test_ImageRatioResizing.php 480 640 400 400
 ```
