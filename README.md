@@ -58,7 +58,7 @@ $container_height = $argv[4];
 ```
 php Test_ImageRatioResizing.php 480 640 400 400
 ```
-⋅⋅* we must get result as the following:
+... we must get result as the following:
 ```
 image_width: 480
 image_height: 640
@@ -77,7 +77,7 @@ outFile: 300x400_image.png
 ```
 php Test_ImageRatioResizing.php 480 640 600 400
 ```
-⋅⋅* we must get result as the following:
+... we must get result as the following:
 ```
 image_width: 480
 image_height: 640
