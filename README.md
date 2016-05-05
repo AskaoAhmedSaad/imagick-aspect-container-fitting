@@ -6,10 +6,45 @@ resize image according to given image size ratio (width &amp; height) , and give
 <br>
 ### we have some test cases in this script
 - If the image two dimensions equals container two dimensions OR  if the width difference and height difference less than 0 then nothing to do
+```
+	if(($image_width == $container_width && $image_height == $container_height) || 
+		($width_difference < 0 && $height_difference < 0))
+	{
+		return;
+	}
+```
 - If the width difference is negative and height difference is positive use container width as the new width and adjust the new height to image_height/image_width ratio
+```
+	elseif($width_difference < 0 && $height_difference > 0)
+	{
+		$new_width = $container_width;
+		$new_height = $new_width * $image_height/$image_width;
+	}
+```
 - If the width difference is positive and height difference is negative use container height as the new height and adjust the new width to image_width/image_height ratio
+```
+	elseif($width_difference > 0 && $height_difference < 0)
+	{
+		$new_height = $container_height;
+		$new_width = $new_height * $image_width/$image_height;
+	}
+```
 - If the width difference is greater the the height difference use container width as the new width and adjust the new height to image_height/image_width ratio
+```
+	elseif($width_difference > $height_difference)
+	{
+		$new_width = $container_width;
+		$new_height = $new_width * $image_height/$image_width;
+	}
+```
 - Else the height difference is greater the the width difference use container height as the new height and adjust the new width to image_width/image_height ratio
+```
+else
+	{
+		$new_height = $container_height;
+		$new_width = $new_height * $image_width/$image_height;
+	}
+```
 <br>
 
 ### we can use Test_ImageRatioResizing.php to test our logic in command line as this:
