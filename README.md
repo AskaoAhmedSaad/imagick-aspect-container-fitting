@@ -54,10 +54,11 @@ $image_height= $argv[2];
 $container_width = $argv[3];
 $container_height = $argv[4];
 ```
+- example 1:
 ```
 php Test_ImageRatioResizing.php 480 640 400 400
 ```
-- we must get result as the following:
+⋅⋅* we must get result as the following:
 ```
 image_width: 480
 image_height: 640
@@ -71,4 +72,24 @@ new_height: 400
 new_width/new_height : 0.75
 outFile: 300x400_image.png
 ```
+
+- example 2 (change container dimensions):
+```
+php Test_ImageRatioResizing.php 480 640 600 400
+```
+⋅⋅* we must get result as the following:
+```
+image_width: 480
+image_height: 640
+image_width/image_height : 0.75
+container_width: 600
+container_height: 400
+width_difference: -120
+image_height: 640
+the width difference is negative and height difference is positive use container widthas the new width and adjust the new height to image_height/image_width rationew_width: 600
+new_height: 800
+new_width/new_height : 0.75
+outFile: 600x800_image.png
+```
+
 
