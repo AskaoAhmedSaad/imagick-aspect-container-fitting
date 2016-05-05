@@ -54,7 +54,7 @@ else
 ```
 <br>
 
-#### we can use Test_ImageRatioResizing.php to test our logic in command line as this and pass ($image_width, $image_height, $container_width, $container_height):
+#### we can use Test_ImageRatioResizing.php script to test our logic in the command line and pass dimensions ($image_width, $image_height, $container_width, $container_height) as command line args:
 ```
 $image_width = $argv[1];
 $image_height= $argv[2];
