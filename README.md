@@ -5,7 +5,7 @@ resize image according to given image size ratio (width &amp; height) , and give
 [look at this link](http://php.net/manual/en/imagick.setup.php)
 <br>
 ### we have some test cases in this script
-- If the image two dimensions equals container two dimensions OR  if the width difference and height difference less than 0 then nothing to do
+- <b>TestCase 1 : <b> If the image two dimensions equals container two dimensions OR  if the width difference and height difference less than 0 then nothing to do
 ```
 	if(($image_width == $container_width && $image_height == $container_height) || 
 		($width_difference < 0 && $height_difference < 0))
@@ -13,7 +13,7 @@ resize image according to given image size ratio (width &amp; height) , and give
 		return;
 	}
 ```
-- If the width difference is negative and height difference is positive use container width as the new width and adjust the new height to image_height/image_width ratio
+- <b>TestCase 2 : <b> If the width difference is negative and height difference is positive use container width as the new width and adjust the new height to image_height/image_width ratio
 ```
 	elseif($width_difference < 0 && $height_difference > 0)
 	{
@@ -21,7 +21,7 @@ resize image according to given image size ratio (width &amp; height) , and give
 		$new_height = $new_width * $image_height/$image_width;
 	}
 ```
-- If the width difference is positive and height difference is negative use container height as the new height and adjust the new width to image_width/image_height ratio
+- <b>TestCase 3 : <b> If the width difference is positive and height difference is negative use container height as the new height and adjust the new width to image_width/image_height ratio
 ```
 	elseif($width_difference > 0 && $height_difference < 0)
 	{
@@ -29,7 +29,7 @@ resize image according to given image size ratio (width &amp; height) , and give
 		$new_width = $new_height * $image_width/$image_height;
 	}
 ```
-- If the width difference is greater the the height difference use container width as the new width and adjust the new height to image_height/image_width ratio
+- <b>TestCase 4 : <b> If the width difference is greater the the height difference use container width as the new width and adjust the new height to image_height/image_width ratio
 ```
 	elseif($width_difference > $height_difference)
 	{
@@ -37,7 +37,7 @@ resize image according to given image size ratio (width &amp; height) , and give
 		$new_height = $new_width * $image_height/$image_width;
 	}
 ```
-- Else the height difference is greater the the width difference use container height as the new height and adjust the new width to image_width/image_height ratio
+- <b>TestCase 5 : <b> Else the height difference is greater the the width difference use container height as the new height and adjust the new width to image_width/image_height ratio
 ```
 else
 	{
@@ -58,7 +58,7 @@ $container_height = $argv[4];
 ```
 php Test_ImageRatioResizing.php 480 640 400 400
 ```
-... we must get result as the following:
+...we must get result as the following:
 ```
 image_width: 480
 image_height: 640
@@ -77,7 +77,7 @@ outFile: 300x400_image.png
 ```
 php Test_ImageRatioResizing.php 480 640 600 400
 ```
-... we must get result as the following:
+...we must get result as the following:
 ```
 image_width: 480
 image_height: 640
