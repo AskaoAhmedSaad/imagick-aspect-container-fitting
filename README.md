@@ -1,4 +1,4 @@
-# php-resize-image-according-to-given-image-size-ratio-and-given-container-width-height
+# imagick-aspect-container-fitting
 resize image according to given image size ratio (width &amp; height) , and given container width&amp;height using Imagick library
 <br>
 ### install ImageMagick library
